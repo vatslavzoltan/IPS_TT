@@ -16,9 +16,18 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+// Tempalate parts
 Vue.component('blog-page', require('./components/BlogPage.vue').default);
+Vue.component('blog-content', require('./components/BlogContent.vue').default);
+Vue.component('sidebar', require('./components/Sidebar.vue').default);
+Vue.component('subscribe-form', require('./components/SubscibeComponent').default);
+Vue.component('subscribe-popup', require('./components/SubscribePopup').default);
+// Reusable components
 Vue.component('styled-header', require('./components/StyledHeader.vue').default);
 Vue.component('scaled-image', require('./components/ScaledImage.vue').default);
+Vue.component('styled-button', require('./components/StyledButton').default);
+Vue.component('step-progress', require('./components/StepProgress').default);
+Vue.component('check-icon', require('./components/CheckIcon').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

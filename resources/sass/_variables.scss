@@ -2,6 +2,9 @@
 $font-default: 'Lato', sans-serif;
 
 //Colors
-$body-bg: #F2F2F2;
+$body-bg: #fff; // Figma template contain #F2F2F2 but my colorpicker says it's white so I used white.
+$sidebar-bg: #F5F5F5;
 $text-color: #101010;
+$error-color: #E51323;
 $default-gradient: linear-gradient(90deg, #AC519C 0.83%, #E5424F 100%);
+$hover-gradient: linear-gradient(90deg, #B678AA 1.29%, #E28990 100%);

@@ -381,8 +381,12 @@ template {
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #F2F2F2;
+  background-color: #fff;
   color: #101010;
+}
+
+body.fixed {
+  overflow: hidden;
 }
 
 .page {
@@ -456,6 +460,8 @@ body {
   position: relative;
   padding-bottom: 15px;
   margin: 0 0 28px 0;
+  overflow: auto;
+  text-overflow: ellipsis;
 }
 
 .blog__header::after {
@@ -478,5 +484,358 @@ body {
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.blog__sidebar {
+  background-color: #F5F5F5;
+  padding: 50px 25px;
+  width: 100%;
+  max-width: 270px;
+  min-height: 640px;
+  box-sizing: border-box;
+  margin-top: 77px;
+}
+
+.subscribe__button {
+  color: #fff;
+  width: 100%;
+  max-width: 440px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 11px 0;
+  font-size: 15px;
+  line-height: 18px;
+  background: linear-gradient(90deg, #AC519C 0.83%, #E5424F 100%);
+  box-shadow: 0px 3px 10px rgba(104, 104, 104, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.subscribe__button:hover {
+  background: linear-gradient(90deg, #B678AA 1.29%, #E28990 100%);
+}
+
+.subscribe__button.subscibe__submit {
+  font-size: 18px;
+  line-height: 22px;
+  padding: 13px 0;
+}
+
+.subscribe__overlay {
+  position: fixed;
+  background: rgba(38, 38, 38, 0.8);
+  mix-blend-mode: normal;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscribe__popup {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 570px;
+  padding: 18px 65px 38px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.subscribe__close {
+  font-weight: bold;
+  height: 46px;
+  font-size: 38px;
+  line-height: 46px;
+  color: #464646;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 11px;
+  padding: 0;
+}
+
+.progress__labels {
+  margin: 0 0 12px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #848484;
+}
+
+.progress__track {
+  width: 100%;
+  height: 2px;
+  background-color: #E5E5E5;
+  position: relative;
+  display: inline-block;
+}
+
+.progress__track .progress__bar {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(90deg, #AC519C 0.83%, #E5424F 100%);
+}
+
+.form__header {
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 28px;
+  color: #464646;
+  margin: 22px 0 23px;
+  text-align: center;
+}
+
+.form__header_highlight {
+  color: #017B03;
+}
+
+.form__input-row {
+  position: relative;
+  margin-bottom: 21px;
+}
+
+.form__input-row.active .form__label {
+  font-size: 12px;
+  line-height: 14px;
+  top: calc(50% - 14px/2 - 12px);
+}
+
+.form__input-row.error .form__input {
+  border-color: #E51323;
+  color: #E51323;
+}
+
+.form__input-row.error .form__label {
+  color: #E51323;
+}
+
+.form__input {
+  width: 100%;
+  box-shadow: inset 0px 1px 5px rgba(142, 142, 142, 0.5);
+  background: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 26px 39px 9px 11px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.form__input:focus,
+.form__input:active {
+  border-color: #9E9E9E;
+  box-shadow: inset 0px 1px 5px rgba(142, 142, 142, 0.5);
+}
+
+.form__label {
+  color: #828282;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 22px/2);
+  display: block;
+  padding-left: 9px;
+}
+
+.check {
+  width: 100px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.check svg {
+  width: 100px;
+  display: block;
+  margin: 40px auto 0;
+}
+
+.check .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.check .path.circle {
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out;
+}
+
+.check .path.line {
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+
+.check .path.check {
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+.success__text {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 968px) {
+  .blog__container {
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .blog__row {
+    flex-wrap: wrap;
+  }
+
+  .blog__content {
+    max-width: 100%;
+  }
+
+  .blog__sidebar {
+    max-width: 100%;
+    min-height: 0;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .page {
+    padding-top: 25px;
+    padding-bottom: 37px;
+  }
+
+  .blog__container {
+    padding: 0;
+  }
+
+  .blog__row {
+    flex-wrap: wrap;
+  }
+
+  .blog__header {
+    font-size: 24px;
+    line-height: 29px;
+    display: block;
+    margin: 0 auto 28px;
+    max-width: 340px;
+  }
+
+  .blog__content {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .blog__content p {
+    display: block;
+    max-width: 340px;
+    margin: 0 auto 28px;
+  }
+
+  .blog_sub-header {
+    display: block;
+    max-width: 340px;
+    margin: 0 auto 16px;
+  }
+
+  .blog__sidebar {
+    max-width: 340px;
+    min-height: 425px;
+    margin: 0 auto;
+  }
+
+  .subscribe__button {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 13px 0;
+  }
+
+  .blog__sidebar {
+    padding: 34px 29px 0;
+  }
+
+  .subscribe__popup {
+    max-width: 355px;
+    padding: 13px 17px 24px;
+  }
+
+  .subscribe__close {
+    font-size: 29px;
+  }
+
+  .progress__labels {
+    margin: 0;
+  }
+
+  .form__header {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .form__label {
+    font-size: 17px;
+    line-height: 20px;
+  }
 }
 

@@ -3,11 +3,12 @@
         :srcset='`${image1x} 1x, ${image2x} 2x, ${image3x} 3x`'
         :src='image1x'
         :class='className'
+        :alt='alt'
     >
 </template>
 
 <script>
 export default {
-    props: ["image1x", "image2x", "image3x","className"]
+    props: ["image1x", "image2x", "image3x","className", "alt"]
 }
 </script>
